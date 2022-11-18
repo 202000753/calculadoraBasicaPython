@@ -62,7 +62,7 @@ if __name__ == '__main__':
 
         components = operacao.split(' ')
 
-        if(operacaoValida(components) or components.__len__() != 3):
+        if(operacaoValida(components) or components.__len__() == 3):
             calcular(components)
 
             print("Quer fazer mais operações? s->Sim, n->Não")
