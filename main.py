@@ -9,6 +9,12 @@ def isFloat(n):
     except:
         return False
 
+def turnIntoNumber(n):
+    try:
+        return  int(n)
+    except:
+        return float(n)
+
 def operacaoValida(componentes):
     if(components.__len__() == 3 and (componentes[1] == '+' or componentes[1] == '-' or componentes[1] == '*' or componentes[1] == '/')):
         if(componentes[0].isnumeric() or isFloat(componentes[0])):
@@ -18,15 +24,8 @@ def operacaoValida(componentes):
     return False
 
 def calcular(componentes):
-    try:
-        n1 = int(componentes[0])
-    except:
-        n1 = float(componentes[0])
-
-    try:
-        n2 = int(componentes[2])
-    except:
-        n2 = float(componentes[2])
+    n1 = turnIntoNumber(componentes[0])
+    n2 = turnIntoNumber(componentes[2])
 
     if(componentes[1] == '+'):
         result = n1 + n2
